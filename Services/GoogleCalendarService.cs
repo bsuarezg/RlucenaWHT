@@ -41,13 +41,16 @@ namespace RlucenaWHT.Services
             });
         }
 
-        public async Task<List<Appointment>> ObtenerCitasConMovil(string calendarId, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<List<Appointment>> ObtenerCitasConMovil(string calendarId)
         {
             var appointments = new List<Appointment>();
 
+            var startDate = DateTime.Now.Date.AddDays(4);
+            var endDate = startDate.AddDays(1);
+
             var request = _service.Events.List(calendarId);
-            request.TimeMin = startDate ?? DateTime.Now.Date;
-            request.TimeMax = endDate ?? DateTime.Now.Date.AddDays(1);
+            request.TimeMin = startDate;
+            request.TimeMax = endDate;
             request.ShowDeleted = false;
             request.SingleEvents = true;
             request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
