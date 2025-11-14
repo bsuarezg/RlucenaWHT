@@ -1,0 +1,14 @@
+C:\Proyectos\RlucenaWHT\bin\Debug\net10.0\RlucenaWHT.exe
+C:\Proyectos\RlucenaWHT\bin\Debug\net10.0\RlucenaWHT.deps.json
+C:\Proyectos\RlucenaWHT\bin\Debug\net10.0\RlucenaWHT.runtimeconfig.json
+C:\Proyectos\RlucenaWHT\bin\Debug\net10.0\RlucenaWHT.dll
+C:\Proyectos\RlucenaWHT\bin\Debug\net10.0\RlucenaWHT.pdb
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.AssemblyInfoInputs.cache
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.AssemblyInfo.cs
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.csproj.CoreCompileInputs.cache
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.dll
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\refint\RlucenaWHT.dll
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.pdb
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\RlucenaWHT.genruntimeconfig.cache
+C:\Proyectos\RlucenaWHT\obj\Debug\net10.0\ref\RlucenaWHT.dll
