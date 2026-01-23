@@ -23,12 +23,12 @@ namespace RlucenaWHT.Services
     {
         private CalendarService _service;
 
-        public GoogleCalendarService(string credentialJson)
+        public GoogleCalendarService(string credentialFilePath)
         {
             string[] Scopes = { CalendarService.Scope.CalendarReadonly };
 
             GoogleCredential credential;
-            using (var stream = new FileStream(credentialJson, FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(credentialFilePath, FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleCredential.FromStream(stream)
                     .CreateScoped(Scopes);

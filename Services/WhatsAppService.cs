@@ -9,19 +9,17 @@ namespace RlucenaWHT.Services
     public class WhatsAppService
     {
         private readonly HttpClient _httpClient;
-        // Placeholders for your actual data
-        private readonly string _metaApiUrl = "https://graph.facebook.com/v15.0/YOUR_PHONE_NUMBER_ID/messages";
-        private readonly string _apiToken = "YOUR_API_TOKEN";
+        private readonly string _apiUrl;
 
-        public WhatsAppService()
+        public WhatsAppService(string apiUrl, string apiToken)
         {
             _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiToken);
+            _apiUrl = apiUrl;
         }
 
         public async Task<bool> EnviarAvisoCita(string mobileNumber, string appointmentTime, string clientName)
         {
-            // Manual JSON construction
             var jsonPayload = $@"{{
                 ""messaging_product"": ""whatsapp"",
                 ""to"": ""{mobileNumber}"",
@@ -45,7 +43,7 @@ namespace RlucenaWHT.Services
 
             try
             {
-                var response = await _httpClient.PostAsync(_metaApiUrl, content);
+                var response = await _httpClient.PostAsync(_apiUrl, content);
 
                 if (response.IsSuccessStatusCode)
                 {

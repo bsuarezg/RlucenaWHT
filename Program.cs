@@ -1,20 +1,24 @@
 using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using RlucenaWHT.Services;
 
 class Program
 {
     static async Task Main(string[] args)
     {
+        IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
         Console.WriteLine("Starting the appointment notification process...");
 
         // --- Google Calendar ---
-        // Replace with your actual credential file and calendar ID
-        var calendarService = new GoogleCalendarService("path/to/your/credential.json");
-        var appointments = await calendarService.ObtenerCitasConMovil("YOUR_CALENDAR_ID");
+        var calendarService = new GoogleCalendarService(config["GoogleCalendar:CredentialFilePath"]);
+        var appointments = await calendarService.ObtenerCitasConMovil(config["GoogleCalendar:CalendarId"]);
 
         // --- WhatsApp ---
-        var whatsAppService = new WhatsAppService();
+        var whatsAppService = new WhatsAppService(config["WhatsApp:ApiUrl"], config["WhatsApp:ApiToken"]);
 
         foreach (var appointment in appointments)
         {
